@@ -1,6 +1,15 @@
 const isPrime = num => {
   // do code here
-
+  let pembagi = 0;
+  for (let i = 1; i <= num; i++) {
+    if (num % i == 0) {
+      pembagi++;
+    }
+  }
+  if (pembagi == 2) return `${num} IS A PRIME`
+  else {
+    return `${num} IS NOT A PRIME`
+  }
 }
 
 // do not change this code below
@@ -11,4 +20,3 @@ test(isPrime(283), '283 IS A PRIME')
 test(isPrime(21), '21 IS NOT A PRIME')
 test(isPrime(389), '389 IS A PRIME')
 test(isPrime(973), '973 IS NOT A PRIME')
-
