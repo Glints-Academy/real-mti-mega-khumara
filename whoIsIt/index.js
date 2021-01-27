@@ -1,6 +1,6 @@
 const whoIsit = (firstDay, secondDay) => {
   // do code here
-
+return firstDay.filter(item => secondDay.includes(item))
 }
 
 // do not change this code below
