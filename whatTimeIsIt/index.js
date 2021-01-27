@@ -1,7 +1,24 @@
 const whatTimeIsIt = time => {
   // do code here
+  let hour = time.split(" ")[0].split(":")[0];
+  let minute = time.split(" ")[0].split(":")[1];
+  let waktu = time.split(" ")[1];
+  let minuteAwal = minute.split("")[0];
+  let minuteAkhir = minute.split("")[1];
 
-}
+  let str1 = [" ", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eightteen", "nineteen"];
+  let str2 = ["", "", "twenty", "thirty", "forty", "thirty", "fifty"]
+  if (time === "12:00 pm") return "It's noon"
+  if (time === "12:00 am") return "It's midnight"
+  if (waktu === "pm") {
+    if (minute > 19) return `It's ${str1[hour]} past ${str2[minuteAwal]} ${str1[minuteAkhir]} in the afternoon`
+    else return `It's ${str1[hour]} past ${str1[minute]} in the afternoon`
+  } else {
+    if (minute > 19) return `It's ${str1[hour]} past ${str2[minuteAwal]} ${str1[minuteAkhir]} in the morning`
+    else return `It's ${str1[hour]} past ${str1[minute]} in the morning`
+  }
+
+  }
 
 
 // do not change this code below
