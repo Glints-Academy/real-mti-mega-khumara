@@ -1,6 +1,12 @@
 const whenWasItPosted = date => {
   // do code here
-
+  let selisih= new Date().getTime() - new Date(date).getTime();
+  let day= Math.floor(selisih/(1000*24*60*60));
+  if (day<7) return (day>1) ? `${day} days ago` : `${day} day ago`
+  if (day<30) return (Math.floor(day/7) > 1) ? `${Math.floor(day/7)} weeks ago`: `${Math.floor(day/7)} week ago`
+  if (day<365) return (Math.floor(day/30) > 1) ? `${Math.floor(day/30)} months ago`: `${Math.floor(day/30)} month ago`
+  else return (Math.floor(day/365) > 1) ? `${Math.floor(day/365)} years ago`: `${day/365} year ago`
+  
 }
 
 
